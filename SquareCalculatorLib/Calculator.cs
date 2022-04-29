@@ -10,14 +10,14 @@
                     {
                         Circle circle = new Circle(measurements[0]);
                         Console.WriteLine("Circle");
-                        return circle.GetArea();
+                        return circle.GetSquare();
                     }
 
                 case 3:
                     {
                         Triangle triangle = new Triangle(measurements);
                         Console.WriteLine("Triangle");
-                        return triangle.GetArea();
+                        return triangle.GetSquare();
                     }
 
                 default: throw new Exception("Not supported");

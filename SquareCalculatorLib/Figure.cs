@@ -2,19 +2,19 @@
 {
     internal abstract class Figure
     {
-        public int[] Measurements { get; set; }
-        public double Perimeter { get; set; }
-        public double Area { get; set; }
+        protected int[] Measurements { get; set; }
+        protected double Perimeter { get; set; }
+        protected double Square { get; set; }
         public Figure(params int[] measurements)
         {
             Measurements = new int[measurements.Length];
             measurements.CopyTo(Measurements, 0);
             CalcPerimeter();
-            CalcArea();
+            CalcSquare();
         }
-        public virtual void CalcPerimeter() => Perimeter = Measurements.Sum();
-        public abstract void CalcArea();
-        public virtual double GetArea() => Area;
+        protected virtual void CalcPerimeter() => Perimeter = Measurements.Sum();
+        protected abstract void CalcSquare();
+        public virtual double GetSquare() => Square;
         public double GetPerimeter() => Perimeter;
     }
 
@@ -22,15 +22,15 @@
     {
         private int Hypotenuse;
         public Triangle(params int[] sides) : base(sides) { Hypotenuse = Measurements.Max();}
-        public override void CalcArea()
+        protected override void CalcSquare()
         {
             var halfperim = Perimeter / 2;
-            Area =  Math.Sqrt(halfperim * (halfperim - Measurements[0]) * (halfperim - Measurements[1]) * (halfperim - Measurements[2]));
+            Square =  Math.Sqrt(halfperim * (halfperim - Measurements[0]) * (halfperim - Measurements[1]) * (halfperim - Measurements[2]));
         }
-        public override double GetArea()
+        public override double GetSquare()
         {
-            if (double.IsNaN(Area) || Area == 0) Console.WriteLine("Такого треугольника не существует.");
-            return base.GetArea();
+            if (double.IsNaN(Square) || Square == 0) Console.WriteLine("Такого треугольника не существует.");
+            return base.GetSquare();
         }
         public bool IsRight()
         {
@@ -45,7 +45,7 @@
     {
         public Circle(int radius) : base(radius) { }
 
-        public new void CalcPerimeter() => Perimeter = Measurements[0] * 2 * Math.PI;
-        public override void CalcArea() => Area = Measurements[0] * Measurements[0] * Math.PI;
+        protected override void CalcPerimeter() => Perimeter = Measurements[0] * 2 * Math.PI;
+        protected override void CalcSquare() => Square = Measurements[0] * Measurements[0] * Math.PI;
     }
 }
