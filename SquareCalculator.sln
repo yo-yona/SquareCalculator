@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SquareCalculator", "SquareCalculator\SquareCalculator.csproj", "{ADAB325E-976A-4A1B-8EB8-28DC793A0DBF}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SquareCalculatorLib", "SquareCalculatorLib\SquareCalculatorLib.csproj", "{3A586935-F006-4623-8B3A-B21630E25591}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{F65651DF-AD3F-448F-A6EA-7DC9EB5F8BFB}"
@@ -15,10 +13,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{ADAB325E-976A-4A1B-8EB8-28DC793A0DBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ADAB325E-976A-4A1B-8EB8-28DC793A0DBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ADAB325E-976A-4A1B-8EB8-28DC793A0DBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ADAB325E-976A-4A1B-8EB8-28DC793A0DBF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3A586935-F006-4623-8B3A-B21630E25591}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3A586935-F006-4623-8B3A-B21630E25591}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A586935-F006-4623-8B3A-B21630E25591}.Release|Any CPU.ActiveCfg = Release|Any CPU
