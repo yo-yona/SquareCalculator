@@ -20,7 +20,7 @@
                         return triangle.GetSquare();
                     }
 
-                default: throw new Exception("Not supported");
+                default: throw new Exception("Not supported.");
 
             }
         }
@@ -31,7 +31,7 @@
                 Triangle triangle = new Triangle(sides);
                 return triangle.IsRight();
             }
-            else throw new ArgumentException("You didn't pass sufficient information about the triangle");
+            else throw new ArgumentException("You didn't pass sufficient information about the triangle.");
         }
     }
 }
