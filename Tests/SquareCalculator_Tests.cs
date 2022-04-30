@@ -15,21 +15,15 @@ namespace Tests
         [Test]
         public void IsThisRight_3and4and5_ReturnTrue()
         {
-            //arrange
             int a = 3, b = 4, c = 5;
-            //act
             var act = SquareCalculatorLib.Calculator.IsThisRight(a, b, c);
-            //assert
             Assert.That(act, Is.True);
         }
         [Test]
         public void IsThisRight_3and4and6_ReturnFalse()
         {
-            //arrange
             int a = 3, b = 4, c = 6;
-            //act
             var act = SquareCalculatorLib.Calculator.IsThisRight(a, b, c);
-            //assert
             Assert.That(act, Is.False);
         }
         [Test]
@@ -52,9 +46,7 @@ namespace Tests
         [TestCase(4, 5, 8, 8.18)]
         public void CalculateSquareOf_TriagSides_ReturnSquare(int a, int b, int c, double expected)
         {
-            //act
             var result = SquareCalculatorLib.Calculator.CalculateSquareOf(a, b, c);
-            //assert
             Assert.That(result, Is.EqualTo(expected).Within(0.01));
         }
         [Test]
