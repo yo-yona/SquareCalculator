@@ -5,13 +5,12 @@
         protected int[] Measurements { get; }
         protected double Perimeter { get; set; }
         protected double Square { get; set; }
-        protected string BadFigExceptionMessage { get; set; }
-        public Figure(string exMsg = "Bad Figure", params int[] measurements)
+        abstract protected string BadFigExceptionMessage { get; }
+        public Figure(params int[] measurements)
         {
             Measurements = new int[measurements.Length];
-            if (measurements.Any(x => x<=0)) throw new Exception(exMsg);
+            if (measurements.Any(x => x<=0)) throw new Exception(BadFigExceptionMessage);
             measurements.CopyTo(Measurements, 0);
-            BadFigExceptionMessage = exMsg;
             CalcPerimeter();
             CalcSquare();
         }
@@ -29,8 +28,9 @@
     class Triangle : Figure
     {
         private int Hypotenuse;
-        public Triangle(int a, int b, int c) : base("Such a triangle does not exist.", a, b, c) 
-        { 
+        protected override string BadFigExceptionMessage { get => "Such a triangle does not exist.";}
+        public Triangle(int a, int b, int c) : base( a, b, c) 
+        {
             Hypotenuse = Measurements.Max();
         }
         protected override void CalcSquare()
@@ -49,7 +49,8 @@
 
     class Circle : Figure
     {
-        public Circle(int radius) : base("Such a circle does not exist.", radius) { }
+        protected override string BadFigExceptionMessage { get => "Such a circle does not exist."; }
+        public Circle(int radius) : base(radius) { }
 
         protected override void CalcPerimeter() => Perimeter = Measurements[0] * 2 * Math.PI;
         protected override void CalcSquare() => Square = Measurements[0] * Measurements[0] * Math.PI;
