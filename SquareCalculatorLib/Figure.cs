@@ -29,7 +29,7 @@
     class Triangle : Figure
     {
         private int Hypotenuse;
-        public Triangle(params int[] sides) : base("Such a triangle does not exist.", sides) 
+        public Triangle(int a, int b, int c) : base("Such a triangle does not exist.", a, b, c) 
         { 
             Hypotenuse = Measurements.Max();
         }
@@ -49,7 +49,7 @@
 
     class Circle : Figure
     {
-        public Circle(int radius) : base("Such a circle does not exist.", new int[] { radius }) { }
+        public Circle(int radius) : base("Such a circle does not exist.", radius) { }
 
         protected override void CalcPerimeter() => Perimeter = Measurements[0] * 2 * Math.PI;
         protected override void CalcSquare() => Square = Measurements[0] * Measurements[0] * Math.PI;
